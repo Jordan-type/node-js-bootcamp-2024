@@ -20,6 +20,7 @@ app.use(express.json())
 // versioning control - v1, v2 of the APIs
 app.use("/api/v1/users", userRoutes) // using the routes from userRoutes.js file
 
+// define the routes here too - plus create other models - like teachers, student models if possible add services, controllers and routes 
 
 app.get("/", function(req, res) {
     res.send("Hello World!");

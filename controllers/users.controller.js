@@ -16,6 +16,9 @@ const createUserController = async (req, res) => {
 }
 
 
+// add the the other controllers here
+
+
 module.exports = {
     createUserController
 }

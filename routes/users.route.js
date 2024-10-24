@@ -12,5 +12,7 @@ const { createUserController } = require("../controllers/users.controller")
 // POST
 router.post("/create/users", createUserController)
 
+// add other routes here
+
 
 module.exports = router
