@@ -9,10 +9,7 @@ const { connectDB } = require("./config/mongodb.config") // import db here
 
 const userRoutes = require("./routes/users.route")
 
-
-
 connectDB() // calling a function
-
 
 // Middleware to parse JSON bodies (important for POST and PUT requests)
 app.use(express.json())
