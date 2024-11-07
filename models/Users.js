@@ -9,7 +9,7 @@ const userSchema =  new Schema({
     phone_number: {type: Number, required: true}, // country code such +254 checking - backend level or frontend - select code 
     county: {type: String, required: true},
     country: {type: String, required: true},
-    password: {type: String, required: true}, // if you gonna be adding something like Login with Gmail you mmake not required
+    password: {type: String, required: true}, // if you gonna be adding something like Login with Gmail you make not required
     role: {type: String, enum: ["user", "client", "guest", "admin", "superAdmin"], default: "user"}
     
 })
