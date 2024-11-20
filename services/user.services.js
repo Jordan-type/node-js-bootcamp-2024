@@ -1,9 +1,9 @@
 const User = require("../models/Users") // import users model // write a create user function types (9) we have covered - CRUD
 
 // 1. Named function - camelCase specifically the async 
-// * object param - called userData - { username, first_name, last_name, email, phone_number, county, country, password }
-// * note - learn more about objects - making things dynamic 
-// * comments - 2 types - inline comment and paragraph 
+// object param - called userData - { username, first_name, last_name, email, phone_number, county, country, password }
+// note - learn more about objects - making things dynamic 
+// comments - 2 types - inline comment and paragraph 
 //  1. Create 
 function createUser(userData) {
     try {

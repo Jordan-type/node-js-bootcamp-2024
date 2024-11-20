@@ -1,4 +1,5 @@
 const express = require('express')
+const http = require('http');
 const dotenv = require("dotenv")
 dotenv.config()
 
@@ -26,10 +27,73 @@ connectDB() // calling a function
 
 // App-level example
 const logRequest = (req, res, next) => {
-    consol.log(`Request URL: ${req.url}`)
+    console.log(`Request URL: ${req.url}`)
     next()
 }
 
+
+// Http Headers provide additional infor about request or response
+
+// classified 
+// 1. Request headers
+// - `Host` - domain name of the server - localhost
+// - User-agent - identifies the client making the requet - web browser name and version
+// - Accept - specifies the type of data the client can handle - application/json
+// - Accept-Language - specifies the language of the client - en-US
+// - Authrization - contain the credentials for authentication purposes.
+// - Cookie - Contains cookies previously sent by the server with `Set-cookie`
+
+// 2. response headers - theses are sent by the sever to theh clientin response to the above requests and contain infor 
+// - `Content-Type`: Specifies the media type of the response body, such as `text/html` or `application/json`.
+// - `Content-Length`: Indicates the length of the response body in bytes.
+// - `Cache-Control`: Specifies caching directives to be applied by the client or intermediary caches.
+// - `Set-Cookie`: Sets a cookie on the client's browser for subsequent requests.
+// - `Location`: Redirects the client to a different URL.
+
+// 3. General Headers
+// - `Connection`: Specifies the type of connection to be established between the client and server.
+// - `Keep-Alive`: Specifies the maximum number of requests that can be sent over a persistent
+// - `Proxy-Authenticate`: Specifies the authentication scheme and parameters for the proxy server.
+
+// 4. Entity Headers
+// - `Content-Encoding`: Specifies the encoding of the response body, such as `gzip` or
+// - `Content-Language`: Specifies the language of the response body.
+// - `Content-Range`: Specifies the range of bytes in the response body.
+
+
+// note - key-value pairs separated by a colon (:)
+
+const options = {
+    hostname: 'localhost',
+    port: 5000,
+    path: '/api/v1/events/all/events',
+    method: 'GET',
+    headers: {
+        'Authorization': 'Bearer some_jwt_token',
+        'Accept': 'application/json',
+    }
+}
+
+
+const req = http.request(options, (res) => {
+    console.log(`statusCode: ${res.statusCode}`)
+        let data = '';
+        res.on('data', (chunk) => {
+            data += chunk;
+        });
+
+        res.on('end', () => {
+            console.log(data);
+            console.log('Headers:', res.headers);
+        })
+})
+
+
+req.on('error', (error) => {
+    console.error(error);
+});
+
+req.end();
 
 
 
