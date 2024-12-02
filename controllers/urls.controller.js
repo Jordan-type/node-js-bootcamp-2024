@@ -82,7 +82,6 @@ const handleAnalyticsURL = async (req, res) => {
 }
 
 
-
 module.exports = {
     handleGenerateNewShortURL,
     handleRedirectNewShortURL,

@@ -1,16 +1,8 @@
-const express = require('express')
-const http = require('http');
-const dotenv = require("dotenv")
-dotenv.config()
 
+const app = require("./app")
+const { connectDB } = require("./config/mongodb.config") 
 
-const app = express() 
-
-const { connectDB } = require("./config/mongodb.config") // import db here
-const userRoutes = require("./routes/users.route")
-const authRoutes = require("./routes/auth.routes")
-
-connectDB() // calling a function
+connectDB() 
 
 // middlewares
 // - functions that have access to the request object (req) and (res)
@@ -97,15 +89,6 @@ req.end();
 
 
 
-
-
-// Middleware to parse JSON bodies (important for POST and PUT requests)
-app.use(express.json())
-
-// versioning control - v1, v2 of the APIs
-app.use("/api/v1/users", userRoutes) // using the routes from userRoutes.js file
-app.use("/api/v1/auth", authRoutes) // using the routes from authRoutes.js file
-
 // define the routes here too - plus create other models - like teachers, student models if possible add services, controllers and routes 
 
 
@@ -114,13 +97,6 @@ app.get("/error-test", function(req, res, next) {
     next(error)
 
 }) 
-
-// error handling
-app.use((err, req, res, next) => {
-    console.log(err)
-    res.status(500).send({ message: "Internal Server Error" })
-})
-
 
 
 
@@ -134,14 +110,6 @@ app.use((err, req, res, next) => {
 
 
 app.use(logRequest)
-
-
-
-
-
-
-
-
 
 const PORT = process.env.PORT || 3001;
 app.listen(

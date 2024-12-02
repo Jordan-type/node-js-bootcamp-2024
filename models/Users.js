@@ -10,8 +10,7 @@ const userSchema =  new Schema({
     county: {type: String, required: true},
     country: {type: String, required: true},
     password: {type: String, required: true}, // if you gonna be adding something like Login with Gmail you make not required
-    role: {type: String, enum: ["user", "client", "guest", "admin", "superAdmin"], default: "user"}
-    
+    role: {type: String, enum: ["user", "student", "teacher", "guest", "admin", "superAdmin"], default: "user"}
 })
 
 
