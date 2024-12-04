@@ -19,4 +19,4 @@ function authenticateUser(req, res, next) {
 }
 
 
-module.exports = authenticateUser
+export default authenticateUser
