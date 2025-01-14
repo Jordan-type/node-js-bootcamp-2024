@@ -29,7 +29,7 @@
 5. **Full-Stack Development:**
    - **MERN Stack**: MongoDB, Express.js, React, Node.js (Complete full-stack development framework)
 
-## Week Two: MVC Architecture and SQL Models
+## Week Two: MVC Architecture, MomngoDB and SQL Models
 
 1. **MVC Architecture**:
    - **Model**: Represents the data (Tables, Schemas)

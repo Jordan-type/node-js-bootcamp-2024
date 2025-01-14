@@ -7,8 +7,8 @@ dotenv.config()
 
 const userRoutes = require("./routes/users.route")
 const authRoutes = require("./routes/auth.routes")
-const { handleValidationError, errorHandler } = require("./middleware/errorHandler")
 
+const { handleValidationError, errorHandler } = require("./middleware/errorHandler")
 
 const app = express()
 
@@ -17,7 +17,6 @@ app.use(
     cors({
         origin: [process.env.FRONTEND_URL],
         methods: ["GET", "POST", "PUT", "DELETE"], 
-    
     }) 
 );
 

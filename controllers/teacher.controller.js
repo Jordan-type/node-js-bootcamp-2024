@@ -1,5 +1,5 @@
-import Teacher from "../models/Teacher"
-import { handleValidationError } from "../middleware/errorHandler"
+const Teacher = require("../models/Teacher")
+const { handleValidationError } = require("../middleware/errorHandler")
 
 const createTeacher = async (req, res) => {
     try {
@@ -25,6 +25,6 @@ const createTeacher = async (req, res) => {
 }
 
 
-export {
+module.exports = {
     createTeacher
 }

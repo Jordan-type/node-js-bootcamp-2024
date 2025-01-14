@@ -1,5 +1,5 @@
-import Class from "../models/Class"
-import { handleValidationError } from "../middleware/errorHandler"
+const  Class =  require("../models/Class")
+const { handleValidationError } = require("../middleware/errorHandler")
 
 const createClass = async (req, res) => {
     try {

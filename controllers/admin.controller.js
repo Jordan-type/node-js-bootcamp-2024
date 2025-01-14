@@ -1,5 +1,5 @@
-import Admin from "../models/Admin"
-import { handleValidationError } from "../middleware/errorHandler"
+const  Admin = require("../models/Admin")
+const { handleValidationError } = require("../middleware/errorHandler")
 
 const adminSignup = async (req, res) => {
     try {

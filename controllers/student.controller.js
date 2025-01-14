@@ -1,5 +1,5 @@
-import Student from "../models/Student"
-import { handleValidationError } from "../middleware/errorHandler"
+const  Student = require("../models/Student")
+const { handleValidationError } = require("../middleware/errorHandler")
 
 const createStudent = async (req, res) => {
     try {
