@@ -25,6 +25,6 @@ const createStudent = async (req, res) => {
 }
 
 
-export {
+module.exports = {
     createStudent
 }

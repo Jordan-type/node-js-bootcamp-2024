@@ -4,15 +4,16 @@
 const express = require('express');
 const router = express.Router();
 
-const { createUserController } = require("../controllers/users.controller")
+const { createUserProfile, getUserProfile, updateUserProfile, deleteUserProfile } = require("../controllers/users.controller")
+const { authenticateRequest, } = require("../middleware/auth.middleware")
 
 
 // http methods
 // GET - READ - Retrieve data from the server
 // POST
-router.post("/create/users", createUserController)
-
-// add other routes here
-
+router.post("/create/users", authenticateRequest, createUserProfile)
+router.get("/get/users/:email", authenticateRequest, getUserProfile)
+router.put("/update/users/:email", authenticateRequest, updateUserProfile)
+router.delete("/delete/users/:email", authenticateRequest, deleteUserProfile) 
 
 module.exports = router

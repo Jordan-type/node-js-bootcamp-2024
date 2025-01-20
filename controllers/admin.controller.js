@@ -35,6 +35,8 @@ const adminSignup = async (req, res) => {
     }
 }
 
-export {
+
+
+module.exports = {
     adminSignup
 }
