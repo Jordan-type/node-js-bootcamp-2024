@@ -5,8 +5,8 @@ const cors = require("cors")
 dotenv.config()
 
 
-const userRoutes = require("./routes/users.route")
-const authRoutes = require("./routes/auth.routes")
+const routeV1 = require("./routes/index")
+
 
 const { handleValidationError, errorHandler } = require("./middleware/errorHandler")
 
@@ -30,8 +30,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}));
 
 // versioning control - v1, v2 of the APIs
-app.use("/api/v1/users", userRoutes) // using the routes from userRoutes.js file
-app.use("/api/v1/auth", authRoutes) // using the routes from authRoutes.js file
+app.use(routeV1) 
 
 
 module.exports = app

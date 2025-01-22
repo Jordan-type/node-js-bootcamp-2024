@@ -23,6 +23,8 @@ const createClass = async (req, res) => {
 }
 
 
+// Todo: add createClass, get, getall, update, delete
+
 module.exports = {
     createClass
 }

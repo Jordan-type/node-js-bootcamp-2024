@@ -30,6 +30,23 @@ const getUserProfile = async (req, res) => {
     }
 }
 
+// fetch all users
+// getAllUsers
+// @returns users details
+const getUsersProfiles = async (req, res) => {
+    try {
+        const users = await getAllUsers()
+
+        res.status(200).json({
+            users
+        })
+    } catch (error) {
+        res.status(500).json({
+            error: error.message
+        })
+    }
+}
+
 // update user profile - update user by email || id || phone number || username
 // updateUser
 // @params email
@@ -70,6 +87,7 @@ const deleteUserProfile = async (req, res) => {
 module.exports = {
     createUserProfile,
     getUserProfile,
+    getUsersProfiles,
     updateUserProfile,
     deleteUserProfile
 }

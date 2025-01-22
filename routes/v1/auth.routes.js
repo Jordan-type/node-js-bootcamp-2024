@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const { signUp, signIn, signOut, forgotPassword, resetPassword, changePassword, } = require("../controllers/users.controller")
-const { authenticateRequest, } = require("../middleware/auth.middleware")
+const { signUp, signIn, signOut, forgotPassword, resetPassword, changePassword, } = require("../../controllers/users.controller")
+const { authenticateRequest, } = require("../../middleware/auth.middleware")
 
 
 // Auth routes. Public routes

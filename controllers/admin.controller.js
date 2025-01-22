@@ -36,6 +36,9 @@ const adminSignup = async (req, res) => {
 }
 
 
+// Todo: add createAdmin, get, getall, update, delete
+
+
 
 module.exports = {
     adminSignup

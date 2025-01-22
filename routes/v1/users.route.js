@@ -4,8 +4,8 @@
 const express = require('express');
 const router = express.Router();
 
-const { createUserProfile, getUserProfile, updateUserProfile, deleteUserProfile } = require("../controllers/users.controller")
-const { authenticateRequest, } = require("../middleware/auth.middleware")
+const { createUserProfile, getUserProfile, getUsersProfiles, updateUserProfile, deleteUserProfile } = require("../../controllers/users.controller")
+const { authenticateRequest, } = require("../../middleware/auth.middleware")
 
 
 // http methods
@@ -13,6 +13,7 @@ const { authenticateRequest, } = require("../middleware/auth.middleware")
 // POST
 router.post("/create/users", authenticateRequest, createUserProfile)
 router.get("/get/users/:email", authenticateRequest, getUserProfile)
+router.get("/get/all/users", authenticateRequest, getUsersProfiles)
 router.put("/update/users/:email", authenticateRequest, updateUserProfile)
 router.delete("/delete/users/:email", authenticateRequest, deleteUserProfile) 
 
