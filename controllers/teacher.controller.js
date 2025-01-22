@@ -24,6 +24,7 @@ const createTeacher = async (req, res) => {
             }
 }
 
+// Todo: add createTeacher, get, getall, update, delete
 
 module.exports = {
     createTeacher
